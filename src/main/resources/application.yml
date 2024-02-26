@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stm  # Database URL
+    username: root  # Database username
+    password: root  # Database password
+    driver-class-name: org.postgresql.Driver  # JDBC driver
+  jpa:
+    hibernate:
+      ddl-auto: update  # Hibernate DDL auto configuration
+    show-sql: true  # Show SQL statements in logs

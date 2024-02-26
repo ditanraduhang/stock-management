@@ -1,0 +1,15 @@
+version: '3.1'  # Use a version compatible with your Docker Compose
+
+services:
+  db:  # You can name the service as you like, here it's named 'db'
+    image: postgres:15.6  # Specify the version of PostgreSQL you want to use
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root  # Set the password for the PostgreSQL user
+      POSTGRES_USER: root  # (Optional) Specify a user to be created
+      POSTGRES_DB: stm  # (Optional) Specify a database to be created
+    volumes:
+      - ./data:/var/lib/postgresql/data  # Persist data even when the container is destroyed
+    ports:
+      - "5432:5432"  # Map the port from the container to the host
+
